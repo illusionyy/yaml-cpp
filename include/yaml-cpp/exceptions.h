@@ -314,7 +314,7 @@ class YAML_CPP_API NonUniqueMapKey : public RepresentationException {
 
 }  // namespace YAML
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) && !defined(__clang__)
 #define YAML_ATTRIBUTE_NO_SANITIZE_ADDRESS __declspec(no_sanitize_address)
 #elif defined(__has_cpp_attribute) && __has_cpp_attribute(gnu::no_sanitize)
 #define YAML_ATTRIBUTE_NO_SANITIZE_ADDRESS [[gnu::no_sanitize("address")]]
